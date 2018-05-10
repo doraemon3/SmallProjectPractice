@@ -1,0 +1,58 @@
+@import "./variable.scss";
+
+body,h1,h2,h3,h4,h5,h6{
+    margin:0;
+}
+
+button{
+    padding:0;
+    margin:0;
+    background-color: inherit;
+    border:none;
+    color:inherit;
+    font-family:inherit;
+    font-size:inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+
+.icon{
+    width: 1em;
+    height: 1em;
+    vertical-align: -.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+button.btn-gray{
+    font-size:14px;
+    color:$color-gray;
+    transition:background 0.1s linear;
+    &:hover:not(:disabled){
+        color:darken($color-gray,5%);
+    }
+}
+
+
+button.btn-blue{
+    border-radius:4px;
+    padding:0 16px;
+    background: $color-blue;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 32px;
+    border:1px solid $color-blue;
+    transition:background 0.1s linear;
+    &:hover:not(:disabled){
+        background:darken($color-blue,5%);
+    }
+}
+
+button.btn-reverse{
+    background:#FFFFFF;
+    color:#0084ff;
+    &:hover:not(:disabled){
+        background:lighten($color-blue,45%);
+    }
+}

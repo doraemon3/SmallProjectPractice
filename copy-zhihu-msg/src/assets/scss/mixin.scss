@@ -1,0 +1,44 @@
+//弹性盒子相关:
+	//$direction: 取值范围如下:
+	//	row： 主轴与行内轴方向作为默认的书写模式。即横向从左到右排列（左对齐）。
+	//	row-reverse： 对齐方式与row相反。
+	//	column： 主轴与块轴方向作为默认的书写模式。即纵向从上往下排列（顶对齐）。
+	//	column-reverse： 对齐方式与column相反。
+	// 主轴为'direction'时的水平垂直居中
+    @mixin flex-center($direction: row) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @if $direction {
+            flex-direction: $direction;
+        }
+    }
+
+    @mixin flex-start($direction: row) {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        @if $direction {
+            flex-direction: $direction;
+        }
+    }
+
+
+
+    @mixin ellipsis-single {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    
+    // 多行文本省略号...
+    @mixin ellipsis-multi ($num: 2) {
+        display: -webkit-box;
+        overflow: hidden;
+    
+        text-overflow: ellipsis;
+        word-break: break-all;
+    
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $num;
+    }
